@@ -7,29 +7,16 @@ interface Teacher {
   [key: string]: any; // allow extra properties
 }
 
-const teacher1: Teacher = {
-  firstName: 'Amy',
-  lastName: 'Brown',
-  fullTimeEmployee: true,
-  location: 'Sydney',
-  yearsOfExperience: 12
-};
-const teacher2: Teacher = {
-  firstName: 'Bill',
-  lastName: 'Gates',
-  fullTimeEmployee: true,
-  location: 'Melbourne',
-  contract: true
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return firstName[0] + '. ' + lastName;
 };
 
-const teacher3: Teacher = {
-  firstName: 'John',
-  fullTimeEmployee: false,
-  lastName: 'Doe',
-  location: 'London',
-  contract: false
-};
-
-console.log(teacher1);
-console.log(teacher2);
-console.log(teacher3);
+console.log(printTeacher('John', 'Doe'));
