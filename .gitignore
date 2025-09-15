@@ -37,3 +37,6 @@ Thumbs.db
 # Coverage / Testing
 # --------------------------
 coverage/
+
+**/tsconfig.json
+**/webpack.config.js
